@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChillyMZ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0D0D0D; color: #EFEFEF; font-family: 'Inter', sans-serif; }
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 24px 48px; border-bottom: 1px solid #222;
+    }
+    .logo { font-family: 'Bebas Neue', Impact, sans-serif; font-size: 32px; letter-spacing: 4px; }
+    .logo span { color: #C9A84C; }
+    nav a { color: #EFEFEF; text-decoration: none; font-size: 13px; letter-spacing: 2px; margin-left: 32px; }
+    nav a:hover { color: #C9A84C; }
+    .hero {
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; text-align: center;
+      min-height: 90vh; padding: 48px;
+    }
+    .hero h1 {
+      font-family: 'Bebas Neue', Impact, sans-serif;
+      font-size: clamp(64px, 12vw, 140px);
+      line-height: 0.9; letter-spacing: 6px; margin-bottom: 24px;
+    }
+    .hero h1 span { color: #C9A84C; }
+    .hero p { font-size: 16px; color: #888; max-width: 480px; line-height: 1.7; margin-bottom: 40px; }
+    .btn {
+      background: #C9A84C; color: #0D0D0D; padding: 14px 40px;
+      font-family: 'Bebas Neue', sans-serif; font-size: 18px;
+      letter-spacing: 3px; text-decoration: none; display: inline-block;
+    }
+    .btn:hover { background: #F5D76E; }
+    .divider { width: 60px; height: 2px; background: #C9A84C; margin: 0 auto 32px; }
+  </style>
+</head>
+<body>
 
+  <nav>
+    <div class="logo">CHILLY<span>MZ</span></div>
+    <div>
+      <a href="#">BOOK</a>
+      <a href="#">ABOUT</a>
+      <a href="#">INSTAGRAM</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="divider"></div>
+    <h1>JACE<br><span>HALLOWAY</span></h1>
+    <p>A seventeen-year-old discovers he carries dragon blood — and a secret the Council of Kings will kill to keep buried.</p>
+    <a href="#" class="btn">READ FREE</a>
+  </section>
+
+</body>
+</html>
