@@ -7,145 +7,145 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
- --black: #080808;
- --dark: #0D0D0D;
- --surface: #111111;
- --border: #3A3A3A;
- --border-bright: #555555;
- --border-white: rgba(255,255,255,0.15);
- --gold: #C9A84C;
- --gold-light: #F0D080;
- --gold-dim: rgba(201,168,76,0.15);
- --red: #8B1A1A;
- --red-bright: #C0392B;
- --red-glow: rgba(192,57,43,0.15);
- --red-dim: rgba(139,26,26,0.25);
- --white: #FFFFFF;
- --text: #D8D5CE;
- --grey: #CCCCCC;
- --font-display: 'Bebas Neue', Impact, sans-serif;
- --font-serif: 'Cormorant Garamond', Georgia, serif;
- --font-body: 'Montserrat', sans-serif;
+  --black: #080808;
+  --dark: #0D0D0D;
+  --surface: #111111;
+  --border: #3A3A3A;
+  --border-bright: #555555;
+  --border-white: rgba(255,255,255,0.15);
+  --gold: #C9A84C;
+  --gold-light: #F0D080;
+  --gold-dim: rgba(201,168,76,0.15);
+  --red: #8B1A1A;
+  --red-bright: #C0392B;
+  --red-glow: rgba(192,57,43,0.15);
+  --red-dim: rgba(139,26,26,0.25);
+  --white: #FFFFFF;
+  --text: #D8D5CE;
+  --grey: #CCCCCC;
+  --font-display: 'Bebas Neue', Impact, sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Montserrat', sans-serif;
 }
- 
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
- background: var(--dark);
- color: var(--text);
- font-family: var(--font-body);
- font-weight: 300;
- font-size: 15px;
- line-height: 1.8;
- overflow-x: hidden;
+  background: var(--dark);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.8;
+  overflow-x: hidden;
 }
- 
+
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--dark); }
 ::-webkit-scrollbar-thumb { background: var(--gold); }
- 
+
 .page { display: none; min-height: 100vh; }
 .page.active { display: block; }
- 
+
 nav {
- position: fixed;
- top: 0; left: 0; right: 0;
- z-index: 1000;
- display: flex;
- justify-content: space-between;
- align-items: center;
- padding: 20px 48px;
- background: rgba(8,8,8,0.93);
- backdrop-filter: blur(12px);
- border-bottom: 1px solid var(--border-white);
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 48px;
+  background: rgba(8,8,8,0.93);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-white);
 }
- 
+
 .nav-logo {
- cursor: pointer;
- display: flex;
- align-items: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 .nav-logo img { height: 44px; width: auto; object-fit: contain; }
 .nav-links { display: flex; gap: 36px; align-items: center; }
 .nav-links a {
- font-family: var(--font-body);
- font-size: 11px;
- font-weight: 500;
- letter-spacing: 2.5px;
- text-transform: uppercase;
- color: var(--grey);
- text-decoration: none;
- transition: color 0.2s;
- cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--grey);
+  text-decoration: none;
+  transition: color 0.2s;
+  cursor: pointer;
 }
 .nav-links a:hover, .nav-links a.active { color: var(--gold); }
 .nav-cta {
- background: var(--gold);
- color: var(--black) !important;
- padding: 10px 24px;
- font-weight: 600 !important;
- letter-spacing: 1.5px !important;
+  background: var(--gold);
+  color: var(--black) !important;
+  padding: 10px 24px;
+  font-weight: 600 !important;
+  letter-spacing: 1.5px !important;
 }
 .nav-cta:hover { background: var(--gold-light) !important; }
- 
+
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
 .hamburger span { width: 24px; height: 1.5px; background: var(--white); }
- 
+
 .gold-line { width: 48px; height: 1.5px; background: var(--gold); }
- 
+
 .section-label {
- font-family: var(--font-body);
- font-size: 11px;
- font-weight: 500;
- letter-spacing: 4px;
- text-transform: uppercase;
- color: var(--gold);
- margin-bottom: 16px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
 }
- 
+
 .btn {
- display: inline-block;
- font-family: var(--font-display);
- font-size: 16px;
- letter-spacing: 3px;
- text-decoration: none;
- cursor: pointer;
- transition: all 0.25s;
- border: none;
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 16px;
+  letter-spacing: 3px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s;
+  border: none;
 }
 .btn-primary { background: var(--gold); color: var(--black); padding: 14px 40px; }
 .btn-primary:hover { background: var(--gold-light); }
 .btn-outline { background: transparent; color: var(--gold); padding: 13px 38px; border: 1px solid var(--gold); }
 .btn-outline:hover { background: var(--gold-dim); }
- 
+
 #home-hero {
- min-height: 100vh;
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
- text-align: center;
- padding: 120px 48px 80px;
- position: relative;
- overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 120px 48px 80px;
+  position: relative;
+  overflow: hidden;
 }
 .hero-bg {
- position: absolute; inset: 0;
- background: radial-gradient(ellipse 60% 50% at 50% 60%, rgba(201,168,76,0.07) 0%, transparent 70%),
-             radial-gradient(ellipse 30% 40% at 80% 20%, rgba(201,168,76,0.04) 0%, transparent 60%),
-             radial-gradient(ellipse 40% 30% at 10% 80%, rgba(139,26,26,0.12) 0%, transparent 60%),
-             radial-gradient(ellipse 25% 35% at 90% 90%, rgba(192,57,43,0.08) 0%, transparent 60%);
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 60%, rgba(201,168,76,0.07) 0%, transparent 70%),
+              radial-gradient(ellipse 30% 40% at 80% 20%, rgba(201,168,76,0.04) 0%, transparent 60%),
+              radial-gradient(ellipse 40% 30% at 10% 80%, rgba(139,26,26,0.12) 0%, transparent 60%),
+              radial-gradient(ellipse 25% 35% at 90% 90%, rgba(192,57,43,0.08) 0%, transparent 60%);
 }
 .hero-bg-text {
- position: absolute;
- font-family: var(--font-display);
- font-size: clamp(180px, 28vw, 360px);
- color: rgba(201,168,76,0.03);
- letter-spacing: -10px;
- user-select: none;
- top: 50%; left: 50%;
- transform: translate(-50%, -50%);
- white-space: nowrap;
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: clamp(180px, 28vw, 360px);
+  color: rgba(201,168,76,0.03);
+  letter-spacing: -10px;
+  user-select: none;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
 }
 .hero-content { position: relative; z-index: 2; max-width: 800px; }
 .hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
@@ -157,18 +157,18 @@ nav {
 .hero-stats { display: flex; gap: 64px; justify-content: center; padding-top: 48px; border-top: 1px solid var(--border-white); }
 .stat-number { font-family: var(--font-display); font-size: 42px; color: var(--gold); letter-spacing: 2px; display: block; }
 .stat-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--grey); }
- 
+
 .home-section { padding: 100px 48px; max-width: 1200px; margin: 0 auto; }
 .section-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 48px; }
 .grid-card {
- background: var(--surface); padding: 40px 32px;
- border: 1px solid var(--border-white); cursor: pointer; transition: all 0.25s;
- position: relative; overflow: hidden;
+  background: var(--surface); padding: 40px 32px;
+  border: 1px solid var(--border-white); cursor: pointer; transition: all 0.25s;
+  position: relative; overflow: hidden;
 }
 .grid-card::before {
- content: ''; position: absolute; bottom: 0; left: 0;
- width: 100%; height: 2px; background: var(--gold);
- transform: scaleX(0); transition: transform 0.3s;
+  content: ''; position: absolute; bottom: 0; left: 0;
+  width: 100%; height: 2px; background: var(--gold);
+  transform: scaleX(0); transition: transform 0.3s;
 }
 .grid-card:hover { background: #1A1A1A; border-color: rgba(255,255,255,0.28); box-shadow: 0 0 20px rgba(255,255,255,0.04); }
 .grid-card:hover::before { transform: scaleX(1); }
@@ -176,57 +176,57 @@ nav {
 .card-title { font-family: var(--font-display); font-size: 22px; letter-spacing: 2px; margin-bottom: 12px; color: var(--white); }
 .card-desc { font-size: 14px; color: var(--grey); line-height: 1.9; }
 .card-arrow { display: block; margin-top: 24px; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--red-bright); }
- 
+
 .email-section {
- background: var(--surface);
- border-top: 1px solid var(--border-white); border-bottom: 1px solid var(--border-white);
- padding: 80px 48px; text-align: center;
- position: relative; overflow: hidden;
+  background: var(--surface);
+  border-top: 1px solid var(--border-white); border-bottom: 1px solid var(--border-white);
+  padding: 80px 48px; text-align: center;
+  position: relative; overflow: hidden;
 }
 .email-section::before {
- content: '';
- position: absolute;
- top: -60px; left: 50%; transform: translateX(-50%);
- width: 600px; height: 200px;
- background: radial-gradient(ellipse, rgba(139,26,26,0.18) 0%, transparent 70%);
- pointer-events: none;
+  content: '';
+  position: absolute;
+  top: -60px; left: 50%; transform: translateX(-50%);
+  width: 600px; height: 200px;
+  background: radial-gradient(ellipse, rgba(139,26,26,0.18) 0%, transparent 70%);
+  pointer-events: none;
 }
 .email-title { font-family: var(--font-display); font-size: clamp(36px, 6vw, 72px); letter-spacing: 3px; margin-bottom: 12px; color: var(--white); }
 .email-title span { color: var(--gold); }
 .email-sub { font-family: var(--font-serif); font-style: italic; color: var(--grey); font-size: 20px; margin-bottom: 40px; }
 .email-form { display: flex; gap: 0; max-width: 480px; margin: 0 auto; }
 .email-input {
- flex: 1; background: var(--dark); border: 1px solid var(--border-white);
- border-right: none; color: var(--white); padding: 16px 24px;
- font-family: var(--font-body); font-size: 14px; outline: none;
+  flex: 1; background: var(--dark); border: 1px solid var(--border-white);
+  border-right: none; color: var(--white); padding: 16px 24px;
+  font-family: var(--font-body); font-size: 14px; outline: none;
 }
 .email-input::placeholder { color: var(--grey); }
 .email-input:focus { border-color: var(--gold); }
 .email-submit {
- background: var(--gold); color: var(--black); border: none;
- padding: 16px 32px; font-family: var(--font-display); font-size: 15px;
- letter-spacing: 2px; cursor: pointer; transition: background 0.2s;
+  background: var(--gold); color: var(--black); border: none;
+  padding: 16px 32px; font-family: var(--font-display); font-size: 15px;
+  letter-spacing: 2px; cursor: pointer; transition: background 0.2s;
 }
 .email-submit:hover { background: var(--gold-light); }
 .email-note { font-size: 12px; color: var(--grey); margin-top: 16px; letter-spacing: 1px; }
- 
+
 .page-hero { padding: 160px 48px 80px; max-width: 1200px; margin: 0 auto; }
 .page-hero-title { font-family: var(--font-display); font-size: clamp(56px, 10vw, 120px); letter-spacing: 4px; line-height: 0.9; margin-bottom: 24px; color: var(--white); }
 .page-hero-title span { color: var(--gold); }
 .page-hero-sub { font-family: var(--font-serif); font-style: italic; font-size: 20px; color: var(--grey); max-width: 600px; }
- 
+
 .book-showcase {
- display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px;
- padding: 80px 48px; max-width: 1200px; margin: 0 auto;
- align-items: start; border-top: 1px solid var(--border-white);
+  display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px;
+  padding: 80px 48px; max-width: 1200px; margin: 0 auto;
+  align-items: start; border-top: 1px solid var(--border-white);
 }
 .book-cover-wrap { position: sticky; top: 100px; position: relative; }
 .book-cover-img { width: 100%; border: 1px solid var(--border-white); display: block; }
 .cover-badge {
- position: absolute; top: 16px; left: 16px;
- background: var(--gold); color: var(--black);
- font-family: var(--font-display); font-size: 11px;
- letter-spacing: 2px; padding: 6px 14px; z-index: 2;
+  position: absolute; top: 16px; left: 16px;
+  background: var(--gold); color: var(--black);
+  font-family: var(--font-display); font-size: 11px;
+  letter-spacing: 2px; padding: 6px 14px; z-index: 2;
 }
 .book-series { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
 .book-title { font-family: var(--font-display); font-size: clamp(36px, 5vw, 64px); letter-spacing: 3px; line-height: 0.95; margin-bottom: 8px; color: var(--white); }
@@ -234,32 +234,32 @@ nav {
 .book-divider { width: 40px; height: 1px; background: var(--gold); margin-bottom: 32px; }
 .book-desc { font-size: 15px; line-height: 1.9; color: var(--text); margin-bottom: 20px; }
 .book-quote {
- border-left: 2px solid var(--red-bright); padding-left: 24px; margin: 32px 0;
- font-family: var(--font-serif); font-style: italic; font-size: 20px; color: var(--grey); line-height: 1.6;
+  border-left: 2px solid var(--red-bright); padding-left: 24px; margin: 32px 0;
+  font-family: var(--font-serif); font-style: italic; font-size: 20px; color: var(--grey); line-height: 1.6;
 }
 .book-meta {
- display: flex; gap: 40px; padding: 24px 0;
- border-top: 1px solid var(--border-white); border-bottom: 1px solid var(--border-white); margin-bottom: 32px;
+  display: flex; gap: 40px; padding: 24px 0;
+  border-top: 1px solid var(--border-white); border-bottom: 1px solid var(--border-white); margin-bottom: 32px;
 }
 .meta-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--grey); margin-bottom: 4px; }
 .meta-value { font-family: var(--font-display); font-size: 16px; letter-spacing: 2px; color: var(--white); }
 .book-btns { display: flex; gap: 16px; flex-wrap: wrap; }
- 
+
 .book2-section { padding: 80px 48px; max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--border-white); }
 .book2-inner {
- background: var(--surface); border: 1px solid var(--border-white); padding: 64px;
- display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
- position: relative; overflow: hidden;
+  background: var(--surface); border: 1px solid var(--border-white); padding: 64px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+  position: relative; overflow: hidden;
 }
 .book2-inner::before {
- content: '02'; position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
- font-family: var(--font-display); font-size: 240px; color: rgba(201,168,76,0.04); line-height: 1;
+  content: '02'; position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+  font-family: var(--font-display); font-size: 240px; color: rgba(201,168,76,0.04); line-height: 1;
 }
 .book2-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
 .book2-title { font-family: var(--font-display); font-size: 52px; letter-spacing: 3px; line-height: 0.95; margin-bottom: 16px; color: var(--white); }
 .book2-desc { font-size: 15px; color: var(--text); line-height: 1.8; margin-bottom: 32px; }
 .book2-signup-label { font-size: 14px; color: var(--white); margin-bottom: 16px; }
- 
+
 .ratings-intro { padding: 160px 48px 60px; max-width: 1200px; margin: 0 auto; }
 .ratings-grid { padding: 0 48px 100px; max-width: 1200px; margin: 0 auto; }
 .series-block { margin-bottom: 64px; }
@@ -267,14 +267,14 @@ nav {
 .series-author { font-size: 11px; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 24px; }
 .series-books { display: flex; flex-wrap: wrap; gap: 2px; }
 .rating-card {
- background: var(--surface); border: 1px solid var(--border-white); padding: 24px;
- width: 180px; transition: all 0.2s; cursor: pointer;
+  background: var(--surface); border: 1px solid var(--border-white); padding: 24px;
+  width: 180px; transition: all 0.2s; cursor: pointer;
 }
 .rating-card:hover { border-color: var(--gold); background: #1A1A1A; box-shadow: 0 0 16px rgba(201,168,76,0.08); }
 .rating-card-title { font-size: 13px; font-weight: 500; margin-bottom: 8px; line-height: 1.3; color: var(--text); }
 .rating-card-score { font-family: var(--font-display); font-size: 28px; color: var(--red-bright); letter-spacing: 1px; }
 .rating-card-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--grey); }
- 
+
 .history-intro { padding: 160px 48px 80px; max-width: 800px; margin: 0 auto; }
 .timeline { padding: 0 48px 100px; max-width: 800px; margin: 0 auto; position: relative; }
 .timeline::before { content: ''; position: absolute; left: 96px; top: 0; bottom: 0; width: 1px; background: var(--border); }
@@ -284,65 +284,65 @@ nav {
 .timeline-event { font-family: var(--font-display); font-size: 20px; letter-spacing: 1px; margin-bottom: 8px; color: var(--white); }
 .timeline-detail { font-size: 14px; color: var(--text); line-height: 1.9; }
 .coming-soon-badge {
- display: inline-block;
- border: 1px solid var(--border);
- color: var(--grey);
- font-size: 10px;
- letter-spacing: 3px;
- text-transform: uppercase;
- padding: 8px 20px;
- margin-top: 8px;
+  display: inline-block;
+  border: 1px solid var(--border);
+  color: var(--grey);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  margin-top: 8px;
 }
- 
+
 .logo-evolution { padding: 80px 48px; border-top: 1px solid var(--border-white); max-width: 800px; margin: 0 auto; }
 .logo-row { display: flex; gap: 48px; align-items: center; margin-top: 48px; flex-wrap: wrap; }
 .logo-item { text-align: center; }
 .logo-box {
- width: 120px; height: 120px; border-radius: 50%; background: var(--surface);
- border: 2px solid var(--border-white); display: flex; align-items: center; justify-content: center;
- margin-bottom: 12px; overflow: hidden;
+  width: 120px; height: 120px; border-radius: 50%; background: var(--surface);
+  border: 2px solid var(--border-white); display: flex; align-items: center; justify-content: center;
+  margin-bottom: 12px; overflow: hidden;
 }
 .logo-box-gold { border-color: var(--gold); }
 .logo-box img { width: 100%; height: 100%; object-fit: cover; }
 .logo-box-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--grey); }
 .logo-arrow { font-size: 24px; color: var(--border); align-self: center; }
- 
+
 .about-hero {
- min-height: 60vh; display: flex; align-items: flex-end;
- padding: 120px 48px 80px; border-bottom: 1px solid var(--border-white);
- position: relative; overflow: hidden;
+  min-height: 60vh; display: flex; align-items: flex-end;
+  padding: 120px 48px 80px; border-bottom: 1px solid var(--border-white);
+  position: relative; overflow: hidden;
 }
 .about-hero::before {
- content: ''; position: absolute; inset: 0;
- background: radial-gradient(ellipse 50% 60% at 80% 50%, rgba(201,168,76,0.06) 0%, transparent 70%);
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 50% 60% at 80% 50%, rgba(201,168,76,0.06) 0%, transparent 70%);
 }
 .about-hero-content { position: relative; z-index: 1; max-width: 700px; }
 .about-name { font-family: var(--font-display); font-size: clamp(64px, 12vw, 130px); letter-spacing: 4px; line-height: 0.88; margin-bottom: 24px; color: var(--white); }
 .about-name span { color: var(--gold); }
 .about-roles { display: flex; gap: 24px; flex-wrap: wrap; }
 .about-role { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--grey); border: 1px solid var(--border-white); padding: 8px 20px; }
- 
+
 .about-body { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; padding: 80px 48px; max-width: 1200px; margin: 0 auto; }
 .about-heading { font-family: var(--font-display); font-size: 28px; letter-spacing: 2px; margin-bottom: 24px; color: var(--white); }
 .what-i-do { list-style: none; }
 .what-i-do li {
- padding: 18px 0;
- border-bottom: 1px solid var(--border-white);
- font-size: 15px;
- color: var(--text);
- display: flex;
- align-items: center;
- gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border-white);
+  font-size: 15px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 .what-i-do li:first-child { border-top: 1px solid var(--border-white); }
 .what-i-do li::before { content: ''; width: 6px; height: 6px; background: var(--red-bright); border-radius: 50%; flex-shrink: 0; }
- 
+
 .credential { border-top: 1px solid var(--border-white); padding: 20px 0; }
 .credential:last-child { border-bottom: 1px solid var(--border-white); }
 .cred-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
 .cred-value { font-family: var(--font-display); font-size: 18px; letter-spacing: 1px; color: var(--white); }
 .cred-sub { font-size: 13px; color: var(--grey); margin-top: 2px; }
- 
+
 footer { background: var(--black); border-top: 1px solid var(--border-white); padding: 60px 48px 32px; }
 .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 48px; padding-bottom: 48px; border-bottom: 1px solid var(--border-white); flex-wrap: wrap; gap: 32px; }
 .footer-logo { font-family: var(--font-display); font-size: 36px; letter-spacing: 5px; margin-bottom: 8px; color: var(--white); }
@@ -357,400 +357,399 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
 .footer-socials { display: flex; gap: 24px; }
 .footer-socials a { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.2s; }
 .footer-socials a:hover { color: var(--gold); }
- 
+
 .mobile-menu {
- display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
- background: var(--black); z-index: 999;
- flex-direction: column; align-items: center; justify-content: center; gap: 32px;
+  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--black); z-index: 999;
+  flex-direction: column; align-items: center; justify-content: center; gap: 32px;
 }
 .mobile-menu.open { display: flex; }
 .mobile-menu a { font-family: var(--font-display); font-size: 36px; letter-spacing: 4px; color: var(--white); text-decoration: none; cursor: pointer; }
 .mobile-menu a:hover { color: var(--gold); }
 .mobile-close { position: absolute; top: 24px; right: 24px; font-size: 24px; color: var(--grey); cursor: pointer; background: none; border: none; }
- 
+
 @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 .fade-up { animation: fadeUp 0.6s ease forwards; }
 .fade-up-delay-1 { animation-delay: 0.1s; opacity: 0; }
 .fade-up-delay-2 { animation-delay: 0.2s; opacity: 0; }
 .fade-up-delay-3 { animation-delay: 0.35s; opacity: 0; }
 .fade-up-delay-4 { animation-delay: 0.5s; opacity: 0; }
- 
+
 @media (max-width: 768px) {
- nav { padding: 16px 24px; }
- .nav-links { display: none; }
- .hamburger { display: flex; }
- #home-hero { padding: 100px 24px 60px; }
- .hero-stats { gap: 32px; flex-wrap: wrap; }
- .home-section { padding: 60px 24px; }
- .section-grid-3 { grid-template-columns: 1fr; }
- .email-section { padding: 60px 24px; }
- .email-form { flex-direction: column; }
- .email-input { border-right: 1px solid var(--border); border-bottom: none; }
- .page-hero { padding: 120px 24px 60px; }
- .book-showcase { grid-template-columns: 1fr; padding: 40px 24px; gap: 40px; }
- .book-cover-wrap { position: static; max-width: 300px; }
- .book2-inner { grid-template-columns: 1fr; padding: 40px 24px; gap: 32px; }
- .ratings-intro { padding: 120px 24px 40px; }
- .ratings-grid { padding: 0 24px 60px; }
- .rating-card { width: 140px; }
- .history-intro { padding: 120px 24px 60px; }
- .timeline { padding: 0 24px 60px; }
- .timeline::before { left: 60px; }
- .timeline-item { grid-template-columns: 60px 1fr; gap: 24px; }
- .timeline-item::before { left: 56px; }
- .about-hero { padding: 100px 24px 60px; min-height: auto; }
- .about-body { grid-template-columns: 1fr; padding: 40px 24px; gap: 40px; }
- footer { padding: 40px 24px 24px; }
- .footer-top { flex-direction: column; }
- .logo-row { gap: 24px; }
+  nav { padding: 16px 24px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  #home-hero { padding: 100px 24px 60px; }
+  .hero-stats { gap: 32px; flex-wrap: wrap; }
+  .home-section { padding: 60px 24px; }
+  .section-grid-3 { grid-template-columns: 1fr; }
+  .email-section { padding: 60px 24px; }
+  .email-form { flex-direction: column; }
+  .email-input { border-right: 1px solid var(--border); border-bottom: none; }
+  .page-hero { padding: 120px 24px 60px; }
+  .book-showcase { grid-template-columns: 1fr; padding: 40px 24px; gap: 40px; }
+  .book-cover-wrap { position: static; max-width: 300px; }
+  .book2-inner { grid-template-columns: 1fr; padding: 40px 24px; gap: 32px; }
+  .ratings-intro { padding: 120px 24px 40px; }
+  .ratings-grid { padding: 0 24px 60px; }
+  .rating-card { width: 140px; }
+  .history-intro { padding: 120px 24px 60px; }
+  .timeline { padding: 0 24px 60px; }
+  .timeline::before { left: 60px; }
+  .timeline-item { grid-template-columns: 60px 1fr; gap: 24px; }
+  .timeline-item::before { left: 56px; }
+  .about-hero { padding: 100px 24px 60px; min-height: auto; }
+  .about-body { grid-template-columns: 1fr; padding: 40px 24px; gap: 40px; }
+  footer { padding: 40px 24px 24px; }
+  .footer-top { flex-direction: column; }
+  .logo-row { gap: 24px; }
 }
 </style>
 </head>
 <body>
- 
+
 <div class="mobile-menu" id="mobileMenu">
- <button class="mobile-close" onclick="closeMobileMenu()">X</button>
- <a onclick="showPage('home'); closeMobileMenu()">Home</a>
- <a onclick="showPage('novels'); closeMobileMenu()">Novels</a>
- <a onclick="showPage('ratings'); closeMobileMenu()">Ratings</a>
- <a onclick="showPage('history'); closeMobileMenu()">History</a>
- <a onclick="showPage('about'); closeMobileMenu()">About</a>
+  <button class="mobile-close" onclick="closeMobileMenu()">X</button>
+  <a onclick="showPage('home'); closeMobileMenu()">Home</a>
+  <a onclick="showPage('novels'); closeMobileMenu()">Novels</a>
+  <a onclick="showPage('ratings'); closeMobileMenu()">Ratings</a>
+  <a onclick="showPage('history'); closeMobileMenu()">History</a>
+  <a onclick="showPage('about'); closeMobileMenu()">About</a>
 </div>
- 
+
 <nav>
- <div class="nav-logo" onclick="showPage('home')">
-   <img src="cmz-logo.png" alt="ChillyMZ">
- </div>
- <div class="nav-links">
-   <a onclick="showPage('home')" id="nav-home" class="active">Home</a>
-   <a onclick="showPage('novels')" id="nav-novels">Novels</a>
-   <a onclick="showPage('ratings')" id="nav-ratings">Ratings</a>
-   <a onclick="showPage('history')" id="nav-history">History</a>
-   <a onclick="showPage('about')" id="nav-about">About</a>
-   <a onclick="showPage('novels')" class="btn nav-cta">Get Book 2 Early</a>
- </div>
- <div class="hamburger" onclick="openMobileMenu()">
-   <span></span><span></span><span></span>
- </div>
+  <div class="nav-logo" onclick="showPage('home')">
+    <img src="cmz-logo.png" alt="ChillyMZ">
+  </div>
+  <div class="nav-links">
+    <a onclick="showPage('home')" id="nav-home" class="active">Home</a>
+    <a onclick="showPage('novels')" id="nav-novels">Novels</a>
+    <a onclick="showPage('ratings')" id="nav-ratings">Ratings</a>
+    <a onclick="showPage('history')" id="nav-history">History</a>
+    <a onclick="showPage('about')" id="nav-about">About</a>
+    <a onclick="showPage('novels')" class="btn nav-cta">Get Book 2 Early</a>
+  </div>
+  <div class="hamburger" onclick="openMobileMenu()">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
- 
+
 <!-- HOME -->
 <div id="page-home" class="page active">
- <section id="home-hero">
-   <div class="hero-bg"></div>
-   <div class="hero-bg-text">CMZ</div>
-   <div class="hero-content">
-     <p class="hero-eyebrow fade-up">Fantasy Author · Screenwriter · Content Creator</p>
-     <h1 class="hero-title fade-up fade-up-delay-1">CHILLY<span>MZ</span></h1>
-     <p class="hero-subtitle fade-up fade-up-delay-2">Where stories are built, chapter by chapter.</p>
-     <p class="hero-desc fade-up fade-up-delay-3">Author of Jace Halloway: When Shadows Stir. Chapter by chapter ratings of the fantasy worlds best books. Building a brand one story at a time.</p>
-     <div class="hero-btns fade-up fade-up-delay-4">
-       <button class="btn btn-primary" onclick="showPage('novels')">Read Jace Halloway Free</button>
-       <button class="btn btn-outline" onclick="showPage('ratings')">Chapter Ratings</button>
-     </div>
- 
-   </div>
- </section>
- 
- <section class="home-section">
-   <div class="section-label">Explore</div>
-   <div class="gold-line" style="margin-bottom:48px;"></div>
-   <div class="section-grid-3">
-     <div class="grid-card" onclick="showPage('novels')">
-       <span class="card-number">01</span>
-       <div class="card-title">Jace Halloway</div>
-       <p class="card-desc">Dragon blood. Ancient secrets. A war he was never meant to survive. Book 1 is free and Book 2 is on the way.</p>
-       <span class="card-arrow">Read Now</span>
-     </div>
-     <div class="grid-card" onclick="showPage('ratings')">
-       <span class="card-number">02</span>
-       <div class="card-title">Chapter Ratings</div>
-       <p class="card-desc">Every chapter of the best fantasy series scored and mapped out. Red Rising, Fourth Wing, ACOTAR and more.</p>
-       <span class="card-arrow">View Ratings</span>
-     </div>
-     <div class="grid-card" onclick="showPage('history')">
-       <span class="card-number">03</span>
-       <div class="card-title">The Journey</div>
-       <p class="card-desc">From first draft to viral content. The story behind ChillyMZ, Jace Halloway, and building a brand from scratch.</p>
-       <span class="card-arrow">Read Story</span>
-     </div>
-   </div>
- </section>
- 
- <section class="email-section">
-   <div class="section-label">Book 2 Coming Soon</div>
-   <h2 class="email-title">Be First.<br><span>Get Book 2 Early.</span></h2>
-   <p class="email-sub">Read the first 10 chapters before anyone else.</p>
-   <form action="https://buttondown.com/api/emails/embed-subscribe/zoller" method="post" target="_blank" class="email-form">
-     <input class="email-input" type="email" name="email" placeholder="Enter your email" required>
-     <button class="email-submit" type="submit">CLAIM ACCESS</button>
-   </form>
-   <p class="email-note">No spam. Just early access, release news, and updates from ChillyMZ.</p>
- </section>
+  <section id="home-hero">
+    <div class="hero-bg"></div>
+    <div class="hero-bg-text">CMZ</div>
+    <div class="hero-content">
+      <p class="hero-eyebrow fade-up">Fantasy Author · Screenwriter · Content Creator</p>
+      <h1 class="hero-title fade-up fade-up-delay-1">CHILLY<span>MZ</span></h1>
+      <p class="hero-subtitle fade-up fade-up-delay-2">Where stories are built, chapter by chapter.</p>
+      <p class="hero-desc fade-up fade-up-delay-3">Author of Jace Halloway: When Shadows Stir. Chapter by chapter ratings of the fantasy worlds best books. Building a brand one story at a time.</p>
+      <div class="hero-btns fade-up fade-up-delay-4">
+        <button class="btn btn-primary" onclick="showPage('novels')">Read Jace Halloway Free</button>
+        <button class="btn btn-outline" onclick="showPage('ratings')">Chapter Ratings</button>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="home-section">
+    <div class="section-label">Explore</div>
+    <div class="gold-line" style="margin-bottom:48px;"></div>
+    <div class="section-grid-3">
+      <div class="grid-card" onclick="showPage('novels')">
+        <span class="card-number">01</span>
+        <div class="card-title">Jace Halloway</div>
+        <p class="card-desc">Dragon blood. Ancient secrets. A war he was never meant to survive. Book 1 is free and Book 2 is on the way.</p>
+        <span class="card-arrow">Read Now</span>
+      </div>
+      <div class="grid-card" onclick="showPage('ratings')">
+        <span class="card-number">02</span>
+        <div class="card-title">Chapter Ratings</div>
+        <p class="card-desc">Every chapter of the best fantasy series scored and mapped out. Red Rising, Fourth Wing, ACOTAR and more.</p>
+        <span class="card-arrow">View Ratings</span>
+      </div>
+      <div class="grid-card" onclick="showPage('history')">
+        <span class="card-number">03</span>
+        <div class="card-title">The Journey</div>
+        <p class="card-desc">From first draft to viral content. The story behind ChillyMZ, Jace Halloway, and building a brand from scratch.</p>
+        <span class="card-arrow">Read Story</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="email-section">
+    <div class="section-label">Book 2 Coming Soon</div>
+    <h2 class="email-title">Be First.<br><span>Get Book 2 Early.</span></h2>
+    <p class="email-sub">Read the first 10 chapters before anyone else.</p>
+    <form action="https://buttondown.com/api/emails/embed-subscribe/zoller" method="post" target="_blank" class="email-form">
+      <input class="email-input" type="email" name="email" placeholder="Enter your email" required>
+      <button class="email-submit" type="submit">CLAIM ACCESS</button>
+    </form>
+    <p class="email-note">No spam. Just early access, release news, and updates from ChillyMZ.</p>
+  </section>
 </div>
- 
+
 <!-- NOVELS -->
 <div id="page-novels" class="page">
- <div class="page-hero">
-   <div class="section-label">The ChillyMZ Universe</div>
-   <h1 class="page-hero-title">THE<br><span>NOVELS</span></h1>
-   <p class="page-hero-sub">Fantasy worlds built chapter by chapter. Action driven, cinematic, and impossible to put down.</p>
- </div>
- 
- <div class="book-showcase">
-   <div class="book-cover-wrap">
-     <div class="cover-badge">FREE TO READ</div>
-     <img src="book-cover.jpeg" alt="Jace Halloway: When Shadows Stir" class="book-cover-img">
-   </div>
-   <div class="book-info">
-     <div class="book-series">Book One · The Halloway Series</div>
-     <h2 class="book-title">JACE<br>HALLOWAY</h2>
-     <p class="book-subtitle">When Shadows Stir</p>
-     <div class="book-divider"></div>
-     <p class="book-desc">Seventeen year old Jace Halloway has always been ordinary. Then one night everything changes and he discovers the blood running through his veins is not human.</p>
-     <p class="book-desc">Dragon blood. Shape shifters. A Wildlife Academy that is nothing like it seems. And buried beneath it all is a secret the Council of Kings has spent centuries trying to erase.</p>
-     <div class="book-quote">He wasn't meant to survive.</div>
-     <div class="book-meta">
-       <div class="meta-item"><div class="meta-label">Genre</div><div class="meta-value">Dark Fantasy</div></div>
-       <div class="meta-item"><div class="meta-label">Status</div><div class="meta-value">Available Now</div></div>
-       <div class="meta-item"><div class="meta-label">Price</div><div class="meta-value">Free</div></div>
-     </div>
-     <div class="book-btns">
-       <a href="https://bit.ly/42Ap3z5" target="_blank" class="btn btn-primary">Read Free Now</a>
-       <button class="btn btn-outline" onclick="document.getElementById('book2-signup').scrollIntoView({behavior:'smooth'})">Get Book 2 Early</button>
-     </div>
-   </div>
- </div>
- 
- <div class="book2-section" id="book2-signup">
-   <div class="book2-inner">
-     <div>
-       <div class="book2-label">Coming Soon · Book Two</div>
-       <h2 class="book2-title">JACE<br>HALLOWAY<br>BOOK 2</h2>
-       <p class="book2-desc">The war has begun. The shadows that stirred in Book 1 have awakened and Jace Halloway is at the center of it all. Release date reveal July 10th.</p>
-     </div>
-     <div>
-       <p class="book2-signup-label">Sign up to get the first 10 chapters free before it hits Amazon Kindle.</p>
-       <form action="https://buttondown.com/api/emails/embed-subscribe/zoller" method="post" target="_blank" style="margin-top:24px;">
-         <div style="display:flex;flex-direction:column;gap:12px;">
-           <input class="email-input" type="email" name="email" placeholder="Your email address" required style="border-right:1px solid var(--border);">
-           <button class="email-submit" type="submit" style="width:100%;padding:16px;">CLAIM EARLY ACCESS</button>
-         </div>
-       </form>
-       <p class="email-note" style="margin-top:12px;">You will also get ChillyMZ updates and release news.</p>
-     </div>
-   </div>
- </div>
+  <div class="page-hero">
+    <div class="section-label">The ChillyMZ Universe</div>
+    <h1 class="page-hero-title">THE<br><span>NOVELS</span></h1>
+    <p class="page-hero-sub">Fantasy worlds built chapter by chapter. Action driven, cinematic, and impossible to put down.</p>
+  </div>
+
+  <div class="book-showcase">
+    <div class="book-cover-wrap">
+      <div class="cover-badge">FREE TO READ</div>
+      <img src="book-cover.jpeg" alt="Jace Halloway: When Shadows Stir" class="book-cover-img">
+    </div>
+    <div class="book-info">
+      <div class="book-series">Book One · The Halloway Series</div>
+      <h2 class="book-title">JACE<br>HALLOWAY</h2>
+      <p class="book-subtitle">When Shadows Stir</p>
+      <div class="book-divider"></div>
+      <p class="book-desc">Seventeen year old Jace Halloway has always been ordinary. Then one night everything changes and he discovers the blood running through his veins is not human.</p>
+      <p class="book-desc">Dragon blood. Shape shifters. A Wildlife Academy that is nothing like it seems. And buried beneath it all is a secret the Council of Kings has spent centuries trying to erase.</p>
+      <div class="book-quote">He wasn't meant to survive.</div>
+      <div class="book-meta">
+        <div class="meta-item"><div class="meta-label">Genre</div><div class="meta-value">Dark Fantasy</div></div>
+        <div class="meta-item"><div class="meta-label">Status</div><div class="meta-value">Available Now</div></div>
+        <div class="meta-item"><div class="meta-label">Price</div><div class="meta-value">Free</div></div>
+      </div>
+      <div class="book-btns">
+        <a href="https://bit.ly/42Ap3z5" target="_blank" class="btn btn-primary">Read Free Now</a>
+        <button class="btn btn-outline" onclick="document.getElementById('book2-signup').scrollIntoView({behavior:'smooth'})">Get Book 2 Early</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="book2-section" id="book2-signup">
+    <div class="book2-inner">
+      <div>
+        <div class="book2-label">Coming Soon · Book Two</div>
+        <h2 class="book2-title">JACE<br>HALLOWAY<br>BOOK 2</h2>
+        <p class="book2-desc">The war has begun. The shadows that stirred in Book 1 have awakened and Jace Halloway is at the center of it all. Release date reveal July 10th.</p>
+      </div>
+      <div>
+        <p class="book2-signup-label">Sign up to get the first 10 chapters free before it hits Amazon Kindle.</p>
+        <form action="https://buttondown.com/api/emails/embed-subscribe/zoller" method="post" target="_blank" style="margin-top:24px;">
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <input class="email-input" type="email" name="email" placeholder="Your email address" required style="border-right:1px solid var(--border);">
+            <button class="email-submit" type="submit" style="width:100%;padding:16px;">CLAIM EARLY ACCESS</button>
+          </div>
+        </form>
+        <p class="email-note" style="margin-top:12px;">You will also get ChillyMZ updates and release news.</p>
+      </div>
+    </div>
+  </div>
 </div>
- 
+
 <!-- RATINGS -->
 <div id="page-ratings" class="page">
- <div class="ratings-intro">
-   <div class="section-label">ChillyMZ Chapter Ratings</div>
-   <h1 class="page-hero-title">CHAPTER<br><span>RATINGS</span></h1>
-   <p class="page-hero-sub">Every chapter of the best fantasy series scored, mapped, and broken down. Follow on Instagram for the full grid.</p>
- </div>
- <div class="ratings-grid">
-   <div class="series-block">
-     <div class="series-title">Red Rising Saga</div>
-     <div class="series-author">Pierce Brown</div>
-     <div class="series-books">
-       <div class="rating-card"><div class="rating-card-title">Red Rising</div><div class="rating-card-score">9.3</div><div class="rating-card-label">/ 10 · Amazing</div></div>
-       <div class="rating-card"><div class="rating-card-title">Golden Son</div><div class="rating-card-score">9.6</div><div class="rating-card-label">/ 10 · Amazing</div></div>
-       <div class="rating-card"><div class="rating-card-title">Morning Star</div><div class="rating-card-score">9.7</div><div class="rating-card-label">/ 10 · Amazing</div></div>
-       <div class="rating-card"><div class="rating-card-title">Iron Gold</div><div class="rating-card-score">9.2</div><div class="rating-card-label">/ 10 · Amazing</div></div>
-       <div class="rating-card"><div class="rating-card-title">Dark Age</div><div class="rating-card-score">9.6</div><div class="rating-card-label">/ 10 · Amazing</div></div>
-       <div class="rating-card"><div class="rating-card-title">Light Bringer</div><div class="rating-card-score">9.8</div><div class="rating-card-label">/ 10 · Amazing</div></div>
-     </div>
-   </div>
-   <div class="series-block">
-     <div class="series-title">The Empyrean</div>
-     <div class="series-author">Rebecca Yarros</div>
-     <div class="series-books">
-       <div class="rating-card"><div class="rating-card-title">Fourth Wing</div><div class="rating-card-score">8.9</div><div class="rating-card-label">/ 10 · Great</div></div>
-       <div class="rating-card"><div class="rating-card-title">Iron Flame</div><div class="rating-card-score">8.2</div><div class="rating-card-label">/ 10 · Great</div></div>
-     </div>
-   </div>
-   <div class="series-block">
-     <div class="series-title">A Song of Ice and Fire</div>
-     <div class="series-author">George R.R. Martin</div>
-     <div class="series-books">
-       <div class="rating-card"><div class="rating-card-title">Game of Thrones</div><div class="rating-card-score">8.1</div><div class="rating-card-label">/ 10 · Great</div></div>
-       <div class="rating-card"><div class="rating-card-title">A Clash of Kings</div><div class="rating-card-score">8.1</div><div class="rating-card-label">/ 10 · Great</div></div>
-       <div class="rating-card"><div class="rating-card-title">A Storm of Swords</div><div class="rating-card-score">8.9</div><div class="rating-card-label">/ 10 · Great</div></div>
-       <div class="rating-card"><div class="rating-card-title">A Feast for Crows</div><div class="rating-card-score">6.8</div><div class="rating-card-label">/ 10 · Mid</div></div>
-       <div class="rating-card"><div class="rating-card-title">A Dance with Dragons</div><div class="rating-card-score">8.6</div><div class="rating-card-label">/ 10 · Great</div></div>
-       <div class="rating-card"><div class="rating-card-title">Fire and Blood</div><div class="rating-card-score">8.0</div><div class="rating-card-label">/ 10 · Great</div></div>
-     </div>
-   </div>
-   <div class="series-block">
-     <div class="series-title">A Court of Thorns and Roses</div>
-     <div class="series-author">Sarah J. Maas</div>
-     <div class="series-books">
-       <div class="rating-card"><div class="rating-card-title">A Court of Thorns and Roses</div><div class="rating-card-score">8.2</div><div class="rating-card-label">/ 10 · Great</div></div>
-       <div class="rating-card"><div class="rating-card-title">A Court of Mist and Fury</div><div class="rating-card-score">8.4</div><div class="rating-card-label">/ 10 · Great</div></div>
-       <div class="rating-card"><div class="rating-card-title">A Court of Wings and Ruin</div><div class="rating-card-score">8.0</div><div class="rating-card-label">/ 10 · Great</div></div>
-       <div class="rating-card"><div class="rating-card-title">A Court of Frost and Starlight</div><div class="rating-card-score">7.9</div><div class="rating-card-label">/ 10 · Mid</div></div>
-     </div>
-   </div>
-   <div class="series-block">
-     <div class="series-title">Shadow and Bone</div>
-     <div class="series-author">Leigh Bardugo</div>
-     <div class="series-books">
-       <div class="rating-card"><div class="rating-card-title">Shadow and Bone</div><div class="rating-card-score">8.4</div><div class="rating-card-label">/ 10 · Great</div></div>
-       <div class="rating-card"><div class="rating-card-title">Siege and Storm</div><div class="rating-card-score">—</div><div class="rating-card-label">Coming Soon</div></div>
-       <div class="rating-card"><div class="rating-card-title">Ruin and Rising</div><div class="rating-card-score">—</div><div class="rating-card-label">Coming Soon</div></div>
-     </div>
-   </div>
-   <div class="series-block">
-     <div class="series-title">Jace Halloway</div>
-     <div class="series-author">ChillyMZ</div>
-     <div class="series-books">
-       <div class="rating-card" style="border-color:rgba(201,168,76,0.3);"><div class="rating-card-title">When Shadows Stir</div><div class="rating-card-score" style="color:var(--gold);">8.2</div><div class="rating-card-label">/ 10 · Great</div></div>
-     </div>
-   </div>
-   <div style="margin-top:48px;padding-top:48px;border-top:1px solid var(--border);text-align:center;">
-     <p class="section-label">Full chapter grids on Instagram</p>
-     <a href="https://instagram.com/chillymz" target="_blank" class="btn btn-outline" style="margin-top:16px;">@chillymz on Instagram</a>
-   </div>
- </div>
+  <div class="ratings-intro">
+    <div class="section-label">ChillyMZ Chapter Ratings</div>
+    <h1 class="page-hero-title">CHAPTER<br><span>RATINGS</span></h1>
+    <p class="page-hero-sub">Every chapter of the best fantasy series scored, mapped, and broken down. Follow on Instagram for the full grid.</p>
+  </div>
+  <div class="ratings-grid">
+    <div class="series-block">
+      <div class="series-title">Red Rising Saga</div>
+      <div class="series-author">Pierce Brown</div>
+      <div class="series-books">
+        <div class="rating-card"><div class="rating-card-title">Red Rising</div><div class="rating-card-score">9.3</div><div class="rating-card-label">/ 10 · Amazing</div></div>
+        <div class="rating-card"><div class="rating-card-title">Golden Son</div><div class="rating-card-score">9.6</div><div class="rating-card-label">/ 10 · Amazing</div></div>
+        <div class="rating-card"><div class="rating-card-title">Morning Star</div><div class="rating-card-score">9.7</div><div class="rating-card-label">/ 10 · Amazing</div></div>
+        <div class="rating-card"><div class="rating-card-title">Iron Gold</div><div class="rating-card-score">9.2</div><div class="rating-card-label">/ 10 · Amazing</div></div>
+        <div class="rating-card"><div class="rating-card-title">Dark Age</div><div class="rating-card-score">9.6</div><div class="rating-card-label">/ 10 · Amazing</div></div>
+        <div class="rating-card"><div class="rating-card-title">Light Bringer</div><div class="rating-card-score">9.8</div><div class="rating-card-label">/ 10 · Amazing</div></div>
+      </div>
+    </div>
+    <div class="series-block">
+      <div class="series-title">The Empyrean</div>
+      <div class="series-author">Rebecca Yarros</div>
+      <div class="series-books">
+        <div class="rating-card"><div class="rating-card-title">Fourth Wing</div><div class="rating-card-score">8.9</div><div class="rating-card-label">/ 10 · Great</div></div>
+        <div class="rating-card"><div class="rating-card-title">Iron Flame</div><div class="rating-card-score">8.2</div><div class="rating-card-label">/ 10 · Great</div></div>
+      </div>
+    </div>
+    <div class="series-block">
+      <div class="series-title">A Song of Ice and Fire</div>
+      <div class="series-author">George R.R. Martin</div>
+      <div class="series-books">
+        <div class="rating-card"><div class="rating-card-title">Game of Thrones</div><div class="rating-card-score">8.1</div><div class="rating-card-label">/ 10 · Great</div></div>
+        <div class="rating-card"><div class="rating-card-title">A Clash of Kings</div><div class="rating-card-score">8.1</div><div class="rating-card-label">/ 10 · Great</div></div>
+        <div class="rating-card"><div class="rating-card-title">A Storm of Swords</div><div class="rating-card-score">8.9</div><div class="rating-card-label">/ 10 · Great</div></div>
+        <div class="rating-card"><div class="rating-card-title">A Feast for Crows</div><div class="rating-card-score">6.8</div><div class="rating-card-label">/ 10 · Mid</div></div>
+        <div class="rating-card"><div class="rating-card-title">A Dance with Dragons</div><div class="rating-card-score">8.6</div><div class="rating-card-label">/ 10 · Great</div></div>
+        <div class="rating-card"><div class="rating-card-title">Fire and Blood</div><div class="rating-card-score">8.0</div><div class="rating-card-label">/ 10 · Great</div></div>
+      </div>
+    </div>
+    <div class="series-block">
+      <div class="series-title">A Court of Thorns and Roses</div>
+      <div class="series-author">Sarah J. Maas</div>
+      <div class="series-books">
+        <div class="rating-card"><div class="rating-card-title">A Court of Thorns and Roses</div><div class="rating-card-score">8.2</div><div class="rating-card-label">/ 10 · Great</div></div>
+        <div class="rating-card"><div class="rating-card-title">A Court of Mist and Fury</div><div class="rating-card-score">8.4</div><div class="rating-card-label">/ 10 · Great</div></div>
+        <div class="rating-card"><div class="rating-card-title">A Court of Wings and Ruin</div><div class="rating-card-score">8.0</div><div class="rating-card-label">/ 10 · Great</div></div>
+        <div class="rating-card"><div class="rating-card-title">A Court of Frost and Starlight</div><div class="rating-card-score">7.9</div><div class="rating-card-label">/ 10 · Mid</div></div>
+      </div>
+    </div>
+    <div class="series-block">
+      <div class="series-title">Shadow and Bone</div>
+      <div class="series-author">Leigh Bardugo</div>
+      <div class="series-books">
+        <div class="rating-card"><div class="rating-card-title">Shadow and Bone</div><div class="rating-card-score">8.4</div><div class="rating-card-label">/ 10 · Great</div></div>
+        <div class="rating-card"><div class="rating-card-title">Siege and Storm</div><div class="rating-card-score">—</div><div class="rating-card-label">Coming Soon</div></div>
+        <div class="rating-card"><div class="rating-card-title">Ruin and Rising</div><div class="rating-card-score">—</div><div class="rating-card-label">Coming Soon</div></div>
+      </div>
+    </div>
+    <div class="series-block">
+      <div class="series-title">Jace Halloway</div>
+      <div class="series-author">ChillyMZ</div>
+      <div class="series-books">
+        <div class="rating-card" style="border-color:rgba(201,168,76,0.3);"><div class="rating-card-title">When Shadows Stir</div><div class="rating-card-score" style="color:var(--gold);">8.2</div><div class="rating-card-label">/ 10 · Great</div></div>
+      </div>
+    </div>
+    <div style="margin-top:48px;padding-top:48px;border-top:1px solid var(--border);text-align:center;">
+      <p class="section-label">Full chapter grids on Instagram</p>
+      <a href="https://instagram.com/chillymz" target="_blank" class="btn btn-outline" style="margin-top:16px;">@chillymz on Instagram</a>
+    </div>
+  </div>
 </div>
- 
+
 <!-- HISTORY -->
 <div id="page-history" class="page">
- <div class="history-intro">
-   <div class="section-label">The Story Behind ChillyMZ</div>
-   <h1 class="page-hero-title">BRAND<br><span>HISTORY</span></h1>
-   <p class="page-hero-sub">Every brand starts somewhere. This is where ChillyMZ started and where it is going.</p>
- </div>
- <div class="timeline">
-   <div class="timeline-item">
-     <div class="timeline-year">2024</div>
-     <div class="timeline-content">
-       <div class="timeline-event">The Beginning</div>
-       <span class="coming-soon-badge">Coming Soon</span>
-     </div>
-   </div>
-   <div class="timeline-item">
-     <div class="timeline-year">2025</div>
-     <div class="timeline-content">
-       <div class="timeline-event">First Steps</div>
-       <span class="coming-soon-badge">Coming Soon</span>
-     </div>
-   </div>
-   <div class="timeline-item">
-     <div class="timeline-year">2026</div>
-     <div class="timeline-content">
-       <div class="timeline-event">Chapter Rating Format Launched</div>
-       <div class="timeline-detail">The chapter by chapter rating grid format launched on Instagram. Red Rising content hit 234K views in a single reel. 351K monthly views. 8,900 plus followers. ChillyMZ website launched. Book 2 in production.</div>
-     </div>
-   </div>
-   <div class="timeline-item">
-     <div class="timeline-year">Next</div>
-     <div class="timeline-content">
-       <div class="timeline-event">What's Coming</div>
-       <div class="timeline-detail">Book 2 release. Print edition of Book 1 in January 2027. Screenplay adaptation in development. Building ChillyMZ into a full media brand.</div>
-     </div>
-   </div>
- </div>
- <div class="logo-evolution">
-   <div class="section-label">Logo Evolution</div>
-   <h2 style="font-family:var(--font-display);font-size:32px;letter-spacing:2px;margin-bottom:8px;color:var(--white);">FROM JH TO <span style="color:var(--gold);">CMZ</span></h2>
-   <p style="font-size:14px;color:var(--text);max-width:500px;">The brand identity evolved from the Jace Halloway book logo to the ChillyMZ creator brand.</p>
-   <div class="logo-row">
-     <div class="logo-item">
-       <div class="logo-box"><img src="jh-logo.jpeg" alt="JH Logo"></div>
-       <div class="logo-box-label">Original · 2024</div>
-     </div>
-     <div class="logo-arrow">to</div>
-     <div class="logo-item">
-       <div class="logo-box logo-box-gold">
-         <span style="font-family:var(--font-display);font-size:32px;letter-spacing:2px;color:var(--white);">C<span style="color:var(--gold);">MZ</span></span>
-       </div>
-       <div class="logo-box-label">Current · 2026</div>
-     </div>
-   </div>
- </div>
+  <div class="history-intro">
+    <div class="section-label">The Story Behind ChillyMZ</div>
+    <h1 class="page-hero-title">BRAND<br><span>HISTORY</span></h1>
+    <p class="page-hero-sub">Every brand starts somewhere. This is where ChillyMZ started and where it is going.</p>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-year">2024</div>
+      <div class="timeline-content">
+        <div class="timeline-event">The Beginning</div>
+        <span class="coming-soon-badge">Coming Soon</span>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2025</div>
+      <div class="timeline-content">
+        <div class="timeline-event">First Steps</div>
+        <span class="coming-soon-badge">Coming Soon</span>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2026</div>
+      <div class="timeline-content">
+        <div class="timeline-event">Chapter Rating Format Launched</div>
+        <div class="timeline-detail">The chapter by chapter rating grid format launched on Instagram. Red Rising content hit 234K views in a single reel. 351K monthly views. 8,900 plus followers. ChillyMZ website launched. Book 2 in production.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">Next</div>
+      <div class="timeline-content">
+        <div class="timeline-event">What's Coming</div>
+        <div class="timeline-detail">Book 2 release. Print edition of Book 1 in January 2027. Screenplay adaptation in development. Building ChillyMZ into a full media brand.</div>
+      </div>
+    </div>
+  </div>
+  <div class="logo-evolution">
+    <div class="section-label">Logo Evolution</div>
+    <h2 style="font-family:var(--font-display);font-size:32px;letter-spacing:2px;margin-bottom:8px;color:var(--white);">FROM JH TO <span style="color:var(--gold);">CMZ</span></h2>
+    <p style="font-size:14px;color:var(--text);max-width:500px;">The brand identity evolved from the Jace Halloway book logo to the ChillyMZ creator brand.</p>
+    <div class="logo-row">
+      <div class="logo-item">
+        <div class="logo-box"><img src="jh-logo.jpeg" alt="JH Logo"></div>
+        <div class="logo-box-label">Original · 2024</div>
+      </div>
+      <div class="logo-arrow">to</div>
+      <div class="logo-item">
+        <div class="logo-box logo-box-gold">
+          <span style="font-family:var(--font-display);font-size:32px;letter-spacing:2px;color:var(--white);">C<span style="color:var(--gold);">MZ</span></span>
+        </div>
+        <div class="logo-box-label">Current · 2026</div>
+      </div>
+    </div>
+  </div>
 </div>
- 
+
 <!-- ABOUT -->
 <div id="page-about" class="page">
- <div class="about-hero">
-   <div class="about-hero-content">
-     <h1 class="about-name">CHILLY<span>MZ</span></h1>
-     <div class="about-roles">
-       <span class="about-role">Fantasy Author</span>
-       <span class="about-role">Screenwriter</span>
-       <span class="about-role">Content Creator</span>
-     </div>
-   </div>
- </div>
- <div class="about-body">
-   <div>
-     <h2 class="about-heading">What I Do</h2>
-     <ul class="what-i-do">
-       <li>Write dark fantasy novels starting with Jace Halloway: When Shadows Stir</li>
-       <li>Adapt stories into screenplays. When Shadows Stir is already in screenplay form</li>
-       <li>Rate fantasy books chapter by chapter on Instagram and TikTok</li>
-       <li>Build the ChillyMZ brand into a full media company</li>
-       <li>Create content that brings fantasy readers together</li>
-     </ul>
-   </div>
-   <div>
-     <div class="credential"><div class="cred-label">Current Project</div><div class="cred-value">Jace Halloway Book 2</div><div class="cred-sub">In production. Release date reveal July 10th</div></div>
-     <div class="credential"><div class="cred-label">Screenplay</div><div class="cred-value">When Shadows Stir</div><div class="cred-sub">Dark fantasy thriller. Listed on Script Revolution</div></div>
-     <div class="credential"><div class="cred-label">Platform</div><div class="cred-value">Instagram · TikTok</div><div class="cred-sub">@chillymz · 351K monthly views</div></div>
-     <div class="credential"><div class="cred-label">Contact</div><div class="cred-value">Get In Touch</div><div class="cred-sub"><a href="mailto:martin_zoller@icloud.com" style="color:var(--gold);text-decoration:none;">martin_zoller@icloud.com</a></div></div>
-   </div>
- </div>
+  <div class="about-hero">
+    <div class="about-hero-content">
+      <h1 class="about-name">CHILLY<span>MZ</span></h1>
+      <div class="about-roles">
+        <span class="about-role">Fantasy Author</span>
+        <span class="about-role">Screenwriter</span>
+        <span class="about-role">Content Creator</span>
+      </div>
+    </div>
+  </div>
+  <div class="about-body">
+    <div>
+      <h2 class="about-heading">What I Do</h2>
+      <ul class="what-i-do">
+        <li>Write dark fantasy novels starting with Jace Halloway: When Shadows Stir</li>
+        <li>Adapt stories into screenplays. When Shadows Stir is already in screenplay form</li>
+        <li>Rate fantasy books chapter by chapter on Instagram and TikTok</li>
+        <li>Build the ChillyMZ brand into a full media company</li>
+        <li>Create content that brings fantasy readers together</li>
+      </ul>
+    </div>
+    <div>
+      <div class="credential"><div class="cred-label">Current Project</div><div class="cred-value">Jace Halloway Book 2</div><div class="cred-sub">In production. Release date reveal July 10th</div></div>
+      <div class="credential"><div class="cred-label">Screenplay</div><div class="cred-value">When Shadows Stir</div><div class="cred-sub">Dark fantasy thriller. Listed on Script Revolution</div></div>
+      <div class="credential"><div class="cred-label">Platform</div><div class="cred-value">Instagram · TikTok</div><div class="cred-sub">@chillymz · 351K monthly views</div></div>
+      <div class="credential"><div class="cred-label">Contact</div><div class="cred-value">Get In Touch</div><div class="cred-sub"><a href="mailto:martin_zoller@icloud.com" style="color:var(--gold);text-decoration:none;">martin_zoller@icloud.com</a></div></div>
+    </div>
+  </div>
 </div>
- 
+
 <footer>
- <div class="footer-top">
-   <div>
-     <div class="footer-logo">CHILLY<span>MZ</span></div>
-     <div class="footer-tagline">Fantasy Author · Screenwriter · Content Creator</div>
-   </div>
-   <div class="footer-links">
-     <div class="footer-col">
-       <div class="footer-col-title">Navigate</div>
-       <a onclick="showPage('home')">Home</a>
-       <a onclick="showPage('novels')">Novels</a>
-       <a onclick="showPage('ratings')">Chapter Ratings</a>
-       <a onclick="showPage('history')">Brand History</a>
-       <a onclick="showPage('about')">About</a>
-     </div>
-     <div class="footer-col">
-       <div class="footer-col-title">Links</div>
-       <a href="https://bit.ly/42Ap3z5" target="_blank">Read Book 1 Free</a>
-       <a href="https://instagram.com/chillymz" target="_blank">Instagram</a>
-       <a href="https://www.tiktok.com/@chilly.mz" target="_blank">TikTok</a>
-       <a href="mailto:martin_zoller@icloud.com">Contact</a>
-     </div>
-   </div>
- </div>
- <div class="footer-bottom">
-   <div class="footer-copy">2026 ChillyMZ. All rights reserved.</div>
-   <div class="footer-socials">
-     <a href="https://instagram.com/chillymz" target="_blank">Instagram</a>
-     <a href="https://www.tiktok.com/@chilly.mz" target="_blank">TikTok</a>
-   </div>
- </div>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">CHILLY<span>MZ</span></div>
+      <div class="footer-tagline">Fantasy Author · Screenwriter · Content Creator</div>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <div class="footer-col-title">Navigate</div>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('novels')">Novels</a>
+        <a onclick="showPage('ratings')">Chapter Ratings</a>
+        <a onclick="showPage('history')">Brand History</a>
+        <a onclick="showPage('about')">About</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Links</div>
+        <a href="https://bit.ly/42Ap3z5" target="_blank">Read Book 1 Free</a>
+        <a href="https://instagram.com/chillymz" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com/@chilly.mz" target="_blank">TikTok</a>
+        <a href="mailto:martin_zoller@icloud.com">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">2026 ChillyMZ. All rights reserved.</div>
+    <div class="footer-socials">
+      <a href="https://instagram.com/chillymz" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@chilly.mz" target="_blank">TikTok</a>
+    </div>
+  </div>
 </footer>
- 
+
 <script>
 function showPage(name) {
- document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
- document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
- document.getElementById('page-' + name).classList.add('active');
- const navLink = document.getElementById('nav-' + name);
- if (navLink) navLink.classList.add('active');
- window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  const navLink = document.getElementById('nav-' + name);
+  if (navLink) navLink.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow = 'hidden'; }
 function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow = ''; }
 </script>
 </body>
 </html>
-
 
