@@ -397,7 +397,11 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
 }
 .reel-modal.open { display: flex; }
 .reel-modal-inner { position: relative; max-width: 420px; width: 100%; }
+.reel-modal.image-mode .reel-modal-inner { max-width: 600px; max-height: 90vh; overflow-y: auto; }
 .reel-modal video { width: 100%; max-height: 80vh; display: block; border: 1px solid var(--border-white); background: #000; }
+.reel-modal img { width: 100%; display: none; border: 1px solid var(--border-white); background: #000; }
+.reel-modal.image-mode video { display: none; }
+.reel-modal.image-mode img { display: block; }
 .reel-modal-close {
   position: absolute; top: -44px; right: 0; font-size: 24px; color: var(--grey);
   cursor: pointer; background: none; border: none;
@@ -448,6 +452,7 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
   <div class="reel-modal-inner">
     <button class="reel-modal-close" onclick="closeReel()">X</button>
     <video id="reelVideo" controls autoplay playsinline></video>
+    <img id="reelImage" alt="Full chapter rating">
   </div>
 </div>
 
@@ -671,6 +676,27 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
       </div>
     </div>
     <div class="series-block">
+      <div class="series-title">The Kingkiller Chronicle</div>
+      <div class="series-author">Patrick Rothfuss</div>
+      <div class="series-books">
+        <button type="button" class="rating-card" onclick="openReel('ratings/name-of-the-wind.png')"><div class="rating-card-title">The Name of the Wind</div><div class="rating-card-score">9.7</div><div class="rating-card-label">/ 10 · Amazing</div></button>
+      </div>
+    </div>
+    <div class="series-block">
+      <div class="series-title">The Folk of the Air</div>
+      <div class="series-author">Holly Black</div>
+      <div class="series-books">
+        <button type="button" class="rating-card" onclick="openReel('ratings/cruel-prince.png')"><div class="rating-card-title">The Cruel Prince</div><div class="rating-card-score">9.4</div><div class="rating-card-label">/ 10 · Amazing</div></button>
+      </div>
+    </div>
+    <div class="series-block">
+      <div class="series-title">Standalone</div>
+      <div class="series-author">Andy Weir</div>
+      <div class="series-books">
+        <button type="button" class="rating-card" onclick="openReel('ratings/project-hail-mary.png')"><div class="rating-card-title">Project Hail Mary</div><div class="rating-card-score">9.3</div><div class="rating-card-label">/ 10 · Amazing</div></button>
+      </div>
+    </div>
+    <div class="series-block">
       <div class="series-title">Jace Halloway</div>
       <div class="series-author">ChillyMZ</div>
       <div class="series-books">
@@ -819,9 +845,15 @@ function showPage(name) {
 function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow = 'hidden'; }
 function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow = ''; }
 function openReel(src) {
-  const video = document.getElementById('reelVideo');
-  video.src = src;
-  document.getElementById('reelModal').classList.add('open');
+  const modal = document.getElementById('reelModal');
+  const isImage = /\.(png|jpe?g|webp)$/i.test(src);
+  modal.classList.toggle('image-mode', isImage);
+  if (isImage) {
+    document.getElementById('reelImage').src = src;
+  } else {
+    document.getElementById('reelVideo').src = src;
+  }
+  modal.classList.add('open');
   document.body.style.overflow = 'hidden';
   posthog.capture('reel_viewed', { src: src });
 }
@@ -829,6 +861,7 @@ function closeReel() {
   const video = document.getElementById('reelVideo');
   video.pause();
   video.src = '';
+  document.getElementById('reelImage').src = '';
   document.getElementById('reelModal').classList.remove('open');
   document.body.style.overflow = '';
 }
