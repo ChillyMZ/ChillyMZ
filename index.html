@@ -463,7 +463,6 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
 
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" onclick="closeMobileMenu()">X</button>
-  <a onclick="showPage('home'); closeMobileMenu()">Home</a>
   <a onclick="showPage('novels'); closeMobileMenu()">Novels</a>
   <a onclick="showPage('ratings'); closeMobileMenu()">Ratings</a>
   <a onclick="showPage('history'); closeMobileMenu()">History</a>
@@ -476,7 +475,6 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
     <img src="cmz-logo.png" alt="ChillyMZ">
   </div>
   <div class="nav-links">
-    <a onclick="showPage('home')" id="nav-home" class="active">Home</a>
     <a onclick="showPage('novels')" id="nav-novels">Novels</a>
     <a onclick="showPage('ratings')" id="nav-ratings">Ratings</a>
     <a onclick="showPage('history')" id="nav-history">History</a>
@@ -574,6 +572,7 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
         <div class="meta-item"><div class="meta-label">Genre</div><div class="meta-value">Dark Fantasy</div></div>
         <div class="meta-item"><div class="meta-label">Status</div><div class="meta-value">Available Now</div></div>
         <div class="meta-item"><div class="meta-label">Price</div><div class="meta-value">Free</div></div>
+        <div class="meta-item" style="cursor:pointer;" onclick="openReel('reels/jace-halloway-when-shadows-stir.mp4')"><div class="meta-label">Rating</div><div class="meta-value" style="color:var(--gold);">9.0 / 10</div></div>
       </div>
       <div class="book-btns">
         <a href="https://linktr.ee/ChillyMainProfile" target="_blank" class="btn btn-primary">Read Free Now</a>
@@ -609,9 +608,16 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
   <div class="ratings-intro">
     <div class="section-label">ChillyMZ Chapter Ratings</div>
     <h1 class="page-hero-title">CHAPTER<br><span>RATINGS</span></h1>
-    <p class="page-hero-sub">Every chapter of the best fantasy series scored, mapped, and broken down. Follow on Instagram for the full grid.</p>
+    <p class="page-hero-sub">Every chapter of the best fantasy series scored, mapped, and broken down. Tap any book for the full chapter grid.</p>
   </div>
   <div class="ratings-grid">
+    <div class="series-block">
+      <div class="series-title">Jace Halloway</div>
+      <div class="series-author">ChillyMZ</div>
+      <div class="series-books">
+        <button type="button" class="rating-card" style="border-color:rgba(201,168,76,0.3);" onclick="openReel('reels/jace-halloway-when-shadows-stir.mp4')"><div class="rating-card-title">When Shadows Stir</div><div class="rating-card-score" style="color:var(--gold);">9.0</div><div class="rating-card-label">/ 10 · Amazing</div></button>
+      </div>
+    </div>
     <div class="series-block">
       <div class="series-title">Red Rising Saga</div>
       <div class="series-author">Pierce Brown</div>
@@ -709,11 +715,12 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
         <button type="button" class="rating-card" onclick="openReel('ratings/project-hail-mary.png')"><div class="rating-card-title">Project Hail Mary</div><div class="rating-card-score">9.3</div><div class="rating-card-label">/ 10 · Amazing</div></button>
       </div>
     </div>
-    <div class="series-block">
-      <div class="series-title">Jace Halloway</div>
-      <div class="series-author">ChillyMZ</div>
-      <div class="series-books">
-        <button type="button" class="rating-card" style="border-color:rgba(201,168,76,0.3);" onclick="openReel('reels/jace-halloway-when-shadows-stir.mp4')"><div class="rating-card-title">When Shadows Stir</div><div class="rating-card-score" style="color:var(--gold);">9.0</div><div class="rating-card-label">/ 10 · Amazing</div></button>
+    <div style="margin-top:64px;padding-top:64px;border-top:1px solid var(--border-white);text-align:center;">
+      <div class="section-label">Enjoyed These?</div>
+      <h2 style="font-family:var(--font-display);font-size:clamp(32px,5vw,56px);letter-spacing:2px;margin-bottom:24px;color:var(--white);">CHILLYMZ'S OWN BOOK IS RATED <span style="color:var(--gold);">9.0 / 10</span></h2>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <button class="btn btn-primary" onclick="showPage('novels')">Read It Free</button>
+        <button class="btn btn-outline" onclick="goToBook2Signup()">Get Book 2 Early</button>
       </div>
     </div>
     <div style="margin-top:48px;padding-top:48px;border-top:1px solid var(--border);text-align:center;">
@@ -778,6 +785,14 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
       </div>
     </div>
   </div>
+  <div style="margin:0 48px 100px;padding-top:64px;border-top:1px solid var(--border-white);text-align:center;max-width:800px;margin-left:auto;margin-right:auto;">
+    <div class="section-label">What's Next</div>
+    <h2 style="font-family:var(--font-display);font-size:clamp(32px,5vw,56px);letter-spacing:2px;margin-bottom:24px;color:var(--white);">READ THE STORY <span style="color:var(--gold);">SO FAR</span></h2>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <button class="btn btn-primary" onclick="showPage('novels')">Read Book 1 Free</button>
+      <button class="btn btn-outline" onclick="goToBook2Signup()">Get Book 2 Early</button>
+    </div>
+  </div>
 </div>
 
 <!-- ABOUT -->
@@ -808,6 +823,14 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
       <div class="credential"><div class="cred-label">Screenplay</div><div class="cred-value">When Shadows Stir</div><div class="cred-sub">Dark fantasy thriller. Listed on Script Revolution</div></div>
       <div class="credential"><div class="cred-label">Platform</div><div class="cred-value">Instagram · TikTok</div><div class="cred-sub">@chillymz · 1.1M views in 60 days</div></div>
       <div class="credential"><div class="cred-label">Contact</div><div class="cred-value">Get In Touch</div><div class="cred-sub"><a href="mailto:martin_zoller@icloud.com" style="color:var(--gold);text-decoration:none;">martin_zoller@icloud.com</a></div></div>
+    </div>
+  </div>
+  <div style="margin:0 48px 100px;padding-top:64px;border-top:1px solid var(--border-white);text-align:center;max-width:800px;margin-left:auto;margin-right:auto;">
+    <div class="section-label">Ready To Dive In?</div>
+    <h2 style="font-family:var(--font-display);font-size:clamp(32px,5vw,56px);letter-spacing:2px;margin-bottom:24px;color:var(--white);">START WITH <span style="color:var(--gold);">BOOK ONE</span></h2>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <button class="btn btn-primary" onclick="showPage('novels')">Read Book 1 Free</button>
+      <button class="btn btn-outline" onclick="goToBook2Signup()">Get Book 2 Early</button>
     </div>
   </div>
 </div>
