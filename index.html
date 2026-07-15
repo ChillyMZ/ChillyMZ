@@ -42,7 +42,7 @@
   --red-dim: rgba(139,26,26,0.25);
   --white: #FFFFFF;
   --text: #D8D5CE;
-  --grey: #CCCCCC;
+  --grey: #E8E6E0;
   --font-display: 'Bebas Neue', Impact, sans-serif;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Montserrat', sans-serif;
@@ -230,6 +230,11 @@ nav {
 .email-submit:hover { background: var(--gold-light); }
 .email-note { font-size: 12px; color: var(--grey); margin-top: 16px; letter-spacing: 1px; }
 
+.countdown { display: flex; gap: 32px; justify-content: center; margin: 0 0 32px; }
+.countdown-unit { text-align: center; }
+.countdown-number { font-family: var(--font-display); font-size: 32px; color: var(--gold); letter-spacing: 1px; display: block; }
+.countdown-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--grey); }
+
 .page-hero { padding: 160px 48px 80px; max-width: 1200px; margin: 0 auto; }
 .page-hero-title { font-family: var(--font-display); font-size: clamp(56px, 10vw, 120px); letter-spacing: 4px; line-height: 0.9; margin-bottom: 24px; color: var(--white); }
 .page-hero-title span { color: var(--gold); }
@@ -375,7 +380,7 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
 .footer-col a { display: block; font-size: 14px; color: var(--grey); text-decoration: none; margin-bottom: 8px; cursor: pointer; transition: color 0.2s; }
 .footer-col a:hover { color: var(--white); }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-.footer-copy { font-size: 11px; color: rgba(136,136,136,0.5); letter-spacing: 1px; }
+.footer-copy { font-size: 11px; color: var(--grey); opacity: 0.7; letter-spacing: 1px; }
 .footer-socials { display: flex; gap: 24px; }
 .footer-socials a { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--grey); text-decoration: none; transition: color 0.2s; }
 .footer-socials a:hover { color: var(--gold); }
@@ -463,6 +468,7 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
   <a onclick="showPage('ratings'); closeMobileMenu()">Ratings</a>
   <a onclick="showPage('history'); closeMobileMenu()">History</a>
   <a onclick="showPage('about'); closeMobileMenu()">About</a>
+  <button type="button" class="btn btn-primary" style="margin-top:8px;" onclick="showPage('novels'); closeMobileMenu()">Get Book 2 Early</button>
 </div>
 
 <nav>
@@ -497,6 +503,11 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
         <button class="btn btn-outline" onclick="showPage('ratings')">Chapter Ratings</button>
       </div>
 
+      <div class="hero-stats fade-up fade-up-delay-4">
+        <div><span class="stat-number">1.1M</span><span class="stat-label">Views / 60 Days</span></div>
+        <div><span class="stat-number">13K+</span><span class="stat-label">Followers</span></div>
+        <div><span class="stat-number">310K+</span><span class="stat-label">Views On One Reel</span></div>
+      </div>
     </div>
   </section>
 
@@ -529,9 +540,10 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
     <div class="section-label">Book 2 Coming Soon</div>
     <h2 class="email-title">Be First.<br><span>Get Book 2 Early.</span></h2>
     <p class="email-sub">Read the first 10 chapters before anyone else.</p>
+    <div class="countdown" id="countdown-home"></div>
     <form action="https://buttondown.com/api/emails/embed-subscribe/zoller" method="post" target="_blank" class="email-form">
       <input class="email-input" type="email" name="email" placeholder="Enter your email" required>
-      <button class="email-submit" type="submit">CLAIM ACCESS</button>
+      <button class="email-submit" type="submit">GET EARLY ACCESS</button>
     </form>
     <p class="email-note">No spam. Just early access, release news, and updates from ChillyMZ.</p>
   </section>
@@ -564,7 +576,7 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
         <div class="meta-item"><div class="meta-label">Price</div><div class="meta-value">Free</div></div>
       </div>
       <div class="book-btns">
-        <a href="https://bit.ly/42Ap3z5" target="_blank" class="btn btn-primary">Read Free Now</a>
+        <a href="https://linktr.ee/ChillyMainProfile" target="_blank" class="btn btn-primary">Read Free Now</a>
         <button class="btn btn-outline" onclick="document.getElementById('book2-signup').scrollIntoView({behavior:'smooth'})">Get Book 2 Early</button>
       </div>
     </div>
@@ -579,10 +591,11 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
       </div>
       <div>
         <p class="book2-signup-label">Sign up to get the first 10 chapters free before it hits Amazon Kindle.</p>
+        <div class="countdown" id="countdown-novels"></div>
         <form action="https://buttondown.com/api/emails/embed-subscribe/zoller" method="post" target="_blank" style="margin-top:24px;">
           <div style="display:flex;flex-direction:column;gap:12px;">
             <input class="email-input" type="email" name="email" placeholder="Your email address" required style="border-right:1px solid var(--border);">
-            <button class="email-submit" type="submit" style="width:100%;padding:16px;">CLAIM EARLY ACCESS</button>
+            <button class="email-submit" type="submit" style="width:100%;padding:16px;">GET EARLY ACCESS</button>
           </div>
         </form>
         <p class="email-note" style="margin-top:12px;">You will also get ChillyMZ updates and release news.</p>
@@ -736,7 +749,7 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
       <div class="timeline-year">2026</div>
       <div class="timeline-content">
         <div class="timeline-event">Chapter Rating Format Launched</div>
-        <div class="timeline-detail">The chapter by chapter rating grid format launched on Instagram. Red Rising content hit 234K views in a single reel. 351K monthly views. 8,900 plus followers. ChillyMZ website launched. Book 2 in production.</div>
+        <div class="timeline-detail">The chapter by chapter rating grid format launched on Instagram. Red Rising content hit 310K plus views in a single reel. 1.1M views in 60 days. 13K plus followers. ChillyMZ website launched. Book 2 in production.</div>
       </div>
     </div>
     <div class="timeline-item">
@@ -793,7 +806,7 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
     <div>
       <div class="credential"><div class="cred-label">Current Project</div><div class="cred-value">Jace Halloway Book 2</div><div class="cred-sub">In production. Release date reveal September 10th</div></div>
       <div class="credential"><div class="cred-label">Screenplay</div><div class="cred-value">When Shadows Stir</div><div class="cred-sub">Dark fantasy thriller. Listed on Script Revolution</div></div>
-      <div class="credential"><div class="cred-label">Platform</div><div class="cred-value">Instagram · TikTok</div><div class="cred-sub">@chillymz · 351K monthly views</div></div>
+      <div class="credential"><div class="cred-label">Platform</div><div class="cred-value">Instagram · TikTok</div><div class="cred-sub">@chillymz · 1.1M views in 60 days</div></div>
       <div class="credential"><div class="cred-label">Contact</div><div class="cred-value">Get In Touch</div><div class="cred-sub"><a href="mailto:martin_zoller@icloud.com" style="color:var(--gold);text-decoration:none;">martin_zoller@icloud.com</a></div></div>
     </div>
   </div>
@@ -816,7 +829,7 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Links</div>
-        <a href="https://bit.ly/42Ap3z5" target="_blank">Read Book 1 Free</a>
+        <a href="https://linktr.ee/ChillyMainProfile" target="_blank">Read Book 1 Free</a>
         <a href="https://instagram.com/chillymz" target="_blank">Instagram</a>
         <a href="https://www.tiktok.com/@chilly.mz" target="_blank">TikTok</a>
         <a href="mailto:martin_zoller@icloud.com">Contact</a>
@@ -865,6 +878,27 @@ function closeReel() {
   document.getElementById('reelModal').classList.remove('open');
   document.body.style.overflow = '';
 }
+function startCountdown(elId, targetIso) {
+  const el = document.getElementById(elId);
+  if (!el) return;
+  const target = new Date(targetIso).getTime();
+  function tick() {
+    const diff = Math.max(0, target - Date.now());
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    el.innerHTML =
+      '<div class="countdown-unit"><span class="countdown-number">' + d + '</span><span class="countdown-label">Days</span></div>' +
+      '<div class="countdown-unit"><span class="countdown-number">' + h + '</span><span class="countdown-label">Hrs</span></div>' +
+      '<div class="countdown-unit"><span class="countdown-number">' + m + '</span><span class="countdown-label">Min</span></div>' +
+      '<div class="countdown-unit"><span class="countdown-number">' + s + '</span><span class="countdown-label">Sec</span></div>';
+  }
+  tick();
+  setInterval(tick, 1000);
+}
+startCountdown('countdown-home', '2026-09-10T00:00:00');
+startCountdown('countdown-novels', '2026-09-10T00:00:00');
 </script>
 </body>
 </html>
