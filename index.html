@@ -290,6 +290,7 @@ nav {
   background: var(--surface); border: 1px solid var(--border-white); padding: 24px;
   width: 180px; transition: all 0.2s; cursor: pointer;
   display: block; text-decoration: none; color: inherit;
+  font: inherit; text-align: left; appearance: none;
 }
 .rating-card:hover { border-color: var(--gold); background: #1A1A1A; box-shadow: 0 0 16px rgba(201,168,76,0.08); }
 .rating-card-title { font-size: 13px; font-weight: 500; margin-bottom: 8px; line-height: 1.3; color: var(--text); }
@@ -389,6 +390,20 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
 .mobile-menu a:hover { color: var(--gold); }
 .mobile-close { position: absolute; top: 24px; right: 24px; font-size: 24px; color: var(--grey); cursor: pointer; background: none; border: none; }
 
+.reel-modal {
+  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(8,8,8,0.92); backdrop-filter: blur(6px); z-index: 2000;
+  align-items: center; justify-content: center; padding: 40px 24px;
+}
+.reel-modal.open { display: flex; }
+.reel-modal-inner { position: relative; max-width: 420px; width: 100%; }
+.reel-modal video { width: 100%; max-height: 80vh; display: block; border: 1px solid var(--border-white); background: #000; }
+.reel-modal-close {
+  position: absolute; top: -44px; right: 0; font-size: 24px; color: var(--grey);
+  cursor: pointer; background: none; border: none;
+}
+.reel-modal-close:hover { color: var(--gold); }
+
 @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 .fade-up { animation: fadeUp 0.6s ease forwards; }
 .fade-up-delay-1 { animation-delay: 0.1s; opacity: 0; }
@@ -428,6 +443,13 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
 </style>
 </head>
 <body>
+
+<div class="reel-modal" id="reelModal" onclick="if(event.target===this) closeReel()">
+  <div class="reel-modal-inner">
+    <button class="reel-modal-close" onclick="closeReel()">X</button>
+    <video id="reelVideo" controls autoplay playsinline></video>
+  </div>
+</div>
 
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" onclick="closeMobileMenu()">X</button>
@@ -576,7 +598,7 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
       <div class="series-title">Red Rising Saga</div>
       <div class="series-author">Pierce Brown</div>
       <div class="series-books">
-        <a class="rating-card" href="https://instagram.com/chillymz" target="_blank" rel="noopener noreferrer"><div class="rating-card-title">Red Rising</div><div class="rating-card-score">9.3</div><div class="rating-card-label">/ 10 · Amazing</div></a>
+        <button type="button" class="rating-card" onclick="openReel('reels/red-rising.mp4')"><div class="rating-card-title">Red Rising</div><div class="rating-card-score">9.3</div><div class="rating-card-label">/ 10 · Amazing</div></button>
         <a class="rating-card" href="https://instagram.com/chillymz" target="_blank" rel="noopener noreferrer"><div class="rating-card-title">Golden Son</div><div class="rating-card-score">9.6</div><div class="rating-card-label">/ 10 · Amazing</div></a>
         <a class="rating-card" href="https://instagram.com/chillymz" target="_blank" rel="noopener noreferrer"><div class="rating-card-title">Morning Star</div><div class="rating-card-score">9.7</div><div class="rating-card-label">/ 10 · Amazing</div></a>
         <a class="rating-card" href="https://instagram.com/chillymz" target="_blank" rel="noopener noreferrer"><div class="rating-card-title">Iron Gold</div><div class="rating-card-score">9.2</div><div class="rating-card-label">/ 10 · Amazing</div></a>
@@ -621,6 +643,28 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
         <a class="rating-card" href="https://instagram.com/chillymz" target="_blank" rel="noopener noreferrer"><div class="rating-card-title">Shadow and Bone</div><div class="rating-card-score">8.4</div><div class="rating-card-label">/ 10 · Great</div></a>
         <a class="rating-card" href="https://instagram.com/chillymz" target="_blank" rel="noopener noreferrer"><div class="rating-card-title">Siege and Storm</div><div class="rating-card-score">—</div><div class="rating-card-label">Coming Soon</div></a>
         <a class="rating-card" href="https://instagram.com/chillymz" target="_blank" rel="noopener noreferrer"><div class="rating-card-title">Ruin and Rising</div><div class="rating-card-score">—</div><div class="rating-card-label">Coming Soon</div></a>
+      </div>
+    </div>
+    <div class="series-block">
+      <div class="series-title">Mistborn</div>
+      <div class="series-author">Brandon Sanderson</div>
+      <div class="series-books">
+        <button type="button" class="rating-card" onclick="openReel('reels/mistborn-well-of-ascension.mp4')"><div class="rating-card-title">The Well of Ascension</div><div class="rating-card-score">8.65</div><div class="rating-card-label">/ 10 · Great</div></button>
+        <button type="button" class="rating-card" onclick="openReel('reels/mistborn-hero-of-ages.mp4')"><div class="rating-card-title">The Hero of Ages</div><div class="rating-card-score">8.75</div><div class="rating-card-label">/ 10 · Great</div></button>
+      </div>
+    </div>
+    <div class="series-block">
+      <div class="series-title">The Stormlight Archive</div>
+      <div class="series-author">Brandon Sanderson</div>
+      <div class="series-books">
+        <button type="button" class="rating-card" onclick="openReel('reels/oathbringer.mp4')"><div class="rating-card-title">Oathbringer</div><div class="rating-card-score">8.66</div><div class="rating-card-label">/ 10 · Great</div></button>
+      </div>
+    </div>
+    <div class="series-block">
+      <div class="series-title">Skyward</div>
+      <div class="series-author">Brandon Sanderson</div>
+      <div class="series-books">
+        <button type="button" class="rating-card" onclick="openReel('reels/defiant.mp4')"><div class="rating-card-title">Defiant</div><div class="rating-card-score">8.73</div><div class="rating-card-label">/ 10 · Great</div></button>
       </div>
     </div>
     <div class="series-block">
@@ -771,6 +815,20 @@ function showPage(name) {
 }
 function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow = 'hidden'; }
 function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow = ''; }
+function openReel(src) {
+  const video = document.getElementById('reelVideo');
+  video.src = src;
+  document.getElementById('reelModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  posthog.capture('reel_viewed', { src: src });
+}
+function closeReel() {
+  const video = document.getElementById('reelVideo');
+  video.pause();
+  video.src = '';
+  document.getElementById('reelModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
 </script>
 </body>
 </html>
