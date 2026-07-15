@@ -468,7 +468,7 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
   <a onclick="showPage('ratings'); closeMobileMenu()">Ratings</a>
   <a onclick="showPage('history'); closeMobileMenu()">History</a>
   <a onclick="showPage('about'); closeMobileMenu()">About</a>
-  <button type="button" class="btn btn-primary" style="margin-top:8px;" onclick="showPage('novels'); closeMobileMenu()">Get Book 2 Early</button>
+  <button type="button" class="btn btn-primary" style="margin-top:8px;" onclick="goToBook2Signup(); closeMobileMenu()">Get Book 2 Early</button>
 </div>
 
 <nav>
@@ -481,7 +481,7 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
     <a onclick="showPage('ratings')" id="nav-ratings">Ratings</a>
     <a onclick="showPage('history')" id="nav-history">History</a>
     <a onclick="showPage('about')" id="nav-about">About</a>
-    <a onclick="showPage('novels')" class="btn nav-cta">Get Book 2 Early</a>
+    <a onclick="goToBook2Signup()" class="btn nav-cta">Get Book 2 Early</a>
   </div>
   <div class="hamburger" onclick="openMobileMenu()">
     <span></span><span></span><span></span>
@@ -846,6 +846,13 @@ footer { background: var(--black); border-top: 1px solid var(--border-white); pa
 </footer>
 
 <script>
+function goToBook2Signup() {
+  showPage('novels');
+  setTimeout(() => {
+    const el = document.getElementById('book2-signup');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }, 50);
+}
 function showPage(name) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
